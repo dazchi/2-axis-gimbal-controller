@@ -1,0 +1,7 @@
+-cpu=rx600
+-lang=c
+-include="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController","C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src"
+-output=obj="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_GPT_U0_C1.obj"
+-debug
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0_C1.c"
+-nologo

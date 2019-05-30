@@ -1,0 +1,100 @@
+Optimizing Linkage Editor (V.10.00.00.001)        30-May-2019 13:55:54
+
+*** Options ***
+
+-subcommand=C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\GimbalController.hlk
+-noprelink
+-rom=D=R,D_1=R_1,D_2=R_2
+-nomessage
+-list="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\GimbalController.map"
+-nooptimize
+-start=B_1,R_1,B_2,R_2,B,R,SU,SI/01000,PResetPRG/0FFFC0100,C_1,C_2,C,C$*,D*,P,PIntPRG,W*/0FFFC0200,FIXEDVECT/0FFFFFFD0
+-nologo
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\dbsct.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Delay.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\GimbalController.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\I2C.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Interrupt_CMT.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Interrupt_IIC.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Interrupt_INTC.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Interrupt_SCI.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\inv_mpu.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\inv_mpu_dmp_motion_driver.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\LED.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\MPU6050.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\PID.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\PWM.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Clock.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ExtInterrupt_IRQ0.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ExtInterrupt_IRQ1.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_I2C_C0.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_IO_PORT_P3.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_IO_PORT_P9.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_SCI_C2.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_CMT_U0.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_GPT_U0.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_GPT_U0_C0.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_GPT_U0_C1.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_GPT_U0_C2.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\resetprg.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\sbrk.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\UART.obj"
+-library="C:\Renesas\PDG2\lib\RX62T\RX62T_library_LQFP_64.lib"
+-library="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\GimbalController.lib"
+-output="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\GimbalController.abs"
+-end
+
+*** Error information ***
+
+** L1100 (W) Cannot find "PIntPRG" specified in option "start"
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+
+B_1
+                                  00001000  0000201e      101f   1
+R_1
+                                  0000201f  00002153       135   1
+B_2
+                                  00002154  00002173        20   2
+R_2
+                                  00002174  0000218f        1c   2
+B
+                                  00002190  000026cb       53c   4
+R
+                                  000026cc  00002a1f       354   4
+SU
+                                  00002a20  00002d1f       300   4
+SI
+                                  00002d20  00002e1f       100   4
+PResetPRG
+                                  fffc0100  fffc0145        46   1
+C_1
+                                  fffc0200  fffc0ef6       cf7   1
+C_2
+                                  fffc0ef8  fffc110f       218   2
+C
+                                  fffc1110  fffc15c8       4b9   4
+C$DSEC
+                                  fffc15cc  fffc15ef        24   4
+C$BSEC
+                                  fffc15f0  fffc1607        18   4
+C$VECT
+                                  fffc1608  fffc1a07       400   4
+D
+                                  fffc1a08  fffc1d5b       354   4
+D_2
+                                  fffc1d5c  fffc1d77        1c   2
+D_1
+                                  fffc1d78  fffc1eac       135   1
+P
+                                  fffc1ead  fffccf94      b0e8   1
+W_1
+                                  fffccf95  fffccf95         0   1
+W_2
+                                  fffccf96  fffccfbb        26   2
+W
+                                  fffccfbc  fffccfbc         0   4
+FIXEDVECT
+                                  ffffffd0  ffffffff        30   4

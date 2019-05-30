@@ -1,0 +1,3 @@
+-cpu=rx600
+-output="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\GimbalController.lib"
+-head=runtime,math,mathf,stdarg,stdio,stdlib,string,new

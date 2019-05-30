@@ -1,0 +1,7 @@
+-cpu=rx600
+-lang=c
+-include="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController","C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src"
+-output=obj="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_I2C_C0.obj"
+-debug
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\RIIC\R_PG_I2C_C0.c"
+-nologo
