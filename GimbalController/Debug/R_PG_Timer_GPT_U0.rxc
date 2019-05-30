@@ -3,5 +3,7 @@
 -include="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController","C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src"
 -output=obj="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_GPT_U0.obj"
 -debug
+-optimize=1
+-speed
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0.c"
 -nologo

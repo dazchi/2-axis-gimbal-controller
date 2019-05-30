@@ -71,8 +71,8 @@ bool R_PG_Clock_Set(void)
 {
 	return R_CGC_Set(
 		10000000,
-		20000000,
-		20000000,
+		80000000,
+		40000000,
 		PDL_CGC_OSC_STOP_DISABLE
 	);
 

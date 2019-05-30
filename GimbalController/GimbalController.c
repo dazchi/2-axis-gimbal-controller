@@ -62,6 +62,7 @@ void main(void)
     PID_Initial(&pid_Roll);
     pid_Pitch.Kp = 0.02;
     pid_Pitch.Ki = 0.04;
+    pid_Pitch.Ki_slow = 0.002;
     pid_Pitch.Kd = 0.4;
     pid_Pitch.UpperLimit = 10.0;
     pid_Pitch.LowerLimit = -10.0;
@@ -91,7 +92,7 @@ void main(void)
                 }
 
                 pid_Pitch.ActualAngle = PRY[1];
-                theta_Pitch += PID_Increase(&pid_Pitch, 0 + deviation_Pitch);
+                theta_Pitch += PID_Increase(&pid_Pitch, -90 + deviation_Pitch);
                 calcPWM_A_Sine(theta_Pitch);
 
                 pid_Roll.ActualAngle = PRY[0];

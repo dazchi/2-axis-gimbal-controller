@@ -8,6 +8,7 @@ typedef struct
     float integral;
     float theta;
     float Kp, Ki, Kd;
+    float Ki_slow;
     float UpperLimit, LowerLimit;
 
 } PID;

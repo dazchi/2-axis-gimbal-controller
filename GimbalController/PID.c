@@ -32,13 +32,13 @@ float PID_Increase(PID *pid, float TargetAngle) //增量型 0.02,0.04,0.4
     pid->err = pid->SetAngle - pid->ActualAngle;
 
     /*-------------------------------------------------*/
-    // original_Ki = pid->Ki;
-    // original_Kd = pid->Kd;
-    // if (fabsf(pid->err) > 10)
-    // {
-    //     pid->Ki = 0.001;
-    //     pid->Kd = 0.1;
-    // }
+    if (fabsf(pid->err) > 15)
+    {
+        pid->Ki = 0.001;
+        pid->Kd = 0.1;
+    }else{
+        
+    }
     /*-------------------------------------------------*/
 
     pid->theta = pid->Kp * (pid->err - pid->err_last) + pid->Ki * pid->err + pid->Kd * (pid->err - 2 * pid->err_last + pid->err_prev);
