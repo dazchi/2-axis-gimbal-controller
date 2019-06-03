@@ -32,6 +32,8 @@ void DMP_Init(void)
                                               0, 1, 0,
                                               0, 0, 1};
 
+    delay_ms(1000);
+
     LOG("DMP Initializing...........\r\n");
     if (!mpu_init()) //mpu初始化
     {

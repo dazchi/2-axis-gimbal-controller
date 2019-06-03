@@ -1,5 +1,9 @@
 #include "PID.h"
 #include "mathf.h"
+PID pid_Roll;
+PID pid_Pitch;
+int slow_flag_Pitch;
+int slow_flag_Roll;
 
 void PID_Initial(PID *pid)
 {
@@ -25,28 +29,84 @@ float PID_Update(PID *pid, float TargetAngle) //位置型
 
 float PID_Increase(PID *pid, float TargetAngle) //增量型 0.02,0.04,0.4
 {
-    float original_Ki = 0;
-    float original_Kd = 0;
-
     pid->SetAngle = TargetAngle;
     pid->err = pid->SetAngle - pid->ActualAngle;
-
-    /*-------------------------------------------------*/
-    if (fabsf(pid->err) > 15)
-    {
-        pid->Ki = 0.001;
-        pid->Kd = 0.1;
-    }else{
-        
-    }
-    /*-------------------------------------------------*/
 
     pid->theta = pid->Kp * (pid->err - pid->err_last) + pid->Ki * pid->err + pid->Kd * (pid->err - 2 * pid->err_last + pid->err_prev);
     pid->err_prev = pid->err_last;
     pid->err_last = pid->err;
 
-    // pid->Ki = original_Ki;
-    // pid->Kd = original_Kd;
-
     return pid->theta;
+}
+
+float PID_Increase_Pitch(float TargetAngle) //增量型 0.02,0.04,0.4
+{
+    pid_Pitch.SetAngle = TargetAngle;
+    pid_Pitch.err = pid_Pitch.SetAngle - pid_Pitch.ActualAngle;
+
+    if (fabsf(pid_Pitch.err) > 15)
+    {
+        slow_flag_Pitch = 1;
+    }
+    else if (fabsf(pid_Pitch.err) < 1)
+    {
+        slow_flag_Pitch = 0;
+    }
+
+    pid_Pitch.theta = pid_Pitch.Kp * (pid_Pitch.err - pid_Pitch.err_last) + pid_Pitch.Ki * pid_Pitch.err + pid_Pitch.Kd * (pid_Pitch.err - 2 * pid_Pitch.err_last + pid_Pitch.err_prev);
+    pid_Pitch.err_prev = pid_Pitch.err_last;
+    pid_Pitch.err_last = pid_Pitch.err;
+
+    if (slow_flag_Pitch)
+    {
+        if (fabsf(pid_Pitch.theta) >= 0.02)
+        {
+            if (pid_Pitch.theta >= 0)
+            {
+                return 0.02;
+            }
+            else
+            {
+                return -0.02;
+            }
+        }
+    }
+
+    return pid_Pitch.theta;
+}
+
+float PID_Increase_Roll(float TargetAngle) //增量型 0.02,0.04,0.4
+{
+    pid_Roll.SetAngle = TargetAngle;
+    pid_Roll.err = pid_Roll.SetAngle - pid_Roll.ActualAngle;
+
+    if (fabsf(pid_Roll.err) > 15)
+    {
+        slow_flag_Roll = 1;
+    }
+    else if (fabsf(pid_Roll.err) < 1)
+    {
+        slow_flag_Roll = 0;
+    }
+
+    pid_Roll.theta = pid_Roll.Kp * (pid_Roll.err - pid_Roll.err_last) + pid_Roll.Ki * pid_Roll.err + pid_Roll.Kd * (pid_Roll.err - 2 * pid_Roll.err_last + pid_Roll.err_prev);
+    pid_Roll.err_prev = pid_Roll.err_last;
+    pid_Roll.err_last = pid_Roll.err;
+
+    if (slow_flag_Roll)
+    {
+        if (fabsf(pid_Roll.theta) >= 0.02)
+        {
+            if (pid_Roll.theta >= 0)
+            {
+                return 0.02;
+            }
+            else
+            {
+                return -0.02;
+            }
+        }
+    }
+
+    return pid_Roll.theta;
 }

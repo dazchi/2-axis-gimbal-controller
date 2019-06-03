@@ -30,8 +30,6 @@ float deviation_Roll = 0;
 float PRY[3] = {0.0};
 int DMPReady_flag = 0;
 int LOG_flag = 0;
-PID pid_Roll;
-PID pid_Pitch;
 float delta = 0.001;
 
 void main(void);
@@ -61,14 +59,13 @@ void main(void)
     PID_Initial(&pid_Pitch);
     PID_Initial(&pid_Roll);
     pid_Pitch.Kp = 0.02;
-    pid_Pitch.Ki = 0.04;
-    pid_Pitch.Ki_slow = 0.002;
-    pid_Pitch.Kd = 0.4;
+    pid_Pitch.Ki = 0.03;
+    pid_Pitch.Kd = 1;
     pid_Pitch.UpperLimit = 10.0;
     pid_Pitch.LowerLimit = -10.0;
-    pid_Roll.Kp = 0.01;
-    pid_Roll.Ki = 0.06;
-    pid_Roll.Kd = 2.0;
+    pid_Roll.Kp = 0.1;
+    pid_Roll.Ki = 0.05;
+    pid_Roll.Kd = 7.0;
     pid_Roll.UpperLimit = 10.0;
     pid_Roll.LowerLimit = -10.0;
     LOG("Start While Loop.....\r\n");
@@ -92,11 +89,11 @@ void main(void)
                 }
 
                 pid_Pitch.ActualAngle = PRY[1];
-                theta_Pitch += PID_Increase(&pid_Pitch, -90 + deviation_Pitch);
+                theta_Pitch += PID_Increase_Pitch(-90 + deviation_Pitch);
                 calcPWM_A_Sine(theta_Pitch);
 
                 pid_Roll.ActualAngle = PRY[0];
-                theta_Roll += PID_Increase(&pid_Roll, 0 + deviation_Roll);
+                theta_Roll += PID_Increase_Roll(deviation_Roll);
                 calcPWM_B_Sine(theta_Roll);
 
                 // if (LOG_flag)

@@ -709,7 +709,7 @@ int mpu_init(void)
     data[0] = BIT_RESET;
     if (i2c_write(st.hw->addr, st.reg->pwr_mgmt_1, 1, data))
         return -1;
-    delay_ms(100);
+    //delay_ms(100);
 
     /* Wake up chip. */
     data[0] = 0x00;

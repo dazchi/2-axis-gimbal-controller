@@ -36,7 +36,7 @@
 * Description  : 
 * Limitations  : 
 ******************************************************************************
-* History : 30.05.2019 Version Description
+* History : 04.06.2019 Version Description
 *         :   
 ******************************************************************************/
 
@@ -71,12 +71,12 @@ bool R_PG_I2C_Set_C0(void)
 {
 	return R_IIC_Create(
 		0,
-		PDL_IIC_MODE_IIC | PDL_IIC_INT_PCLK_DIV_2 | PDL_IIC_TIMEOUT_DISABLE | PDL_IIC_SDA_DELAY_0 | PDL_IIC_NF_DISABLE,
+		PDL_IIC_MODE_IIC | PDL_IIC_INT_PCLK_DIV_4 | PDL_IIC_TIMEOUT_DISABLE | PDL_IIC_SDA_DELAY_0 | PDL_IIC_NF_DISABLE,
 		PDL_IIC_NTALD_DISABLE | PDL_IIC_SALD_DISABLE | PDL_IIC_SLAVE_0_DISABLE | PDL_IIC_SLAVE_1_DISABLE | PDL_IIC_SLAVE_2_DISABLE | PDL_IIC_SLAVE_GCA_DISABLE | PDL_IIC_DEVICE_ID_DISABLE | PDL_IIC_HOST_ADDRESS_DISABLE,
 		0,
 		0,
 		0,
-		( 1 << 31 ) | ( 23 << 8 ) | 25,
+		( 1 << 31 ) | ( 24 << 8 ) | 24,
 		0
 	);
 
