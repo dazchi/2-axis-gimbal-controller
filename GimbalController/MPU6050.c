@@ -37,15 +37,16 @@ void DMP_Init(void)
     LOG("DMP Initializing...........\r\n");
     if (!mpu_init()) //mpu初始化
     {
+        LOG("mpu_init complete ......\r\n");
         if (!mpu_set_sensors(INV_XYZ_GYRO | INV_XYZ_ACCEL)) //设置需要的传感器
-            LOG("mpu_set_sensor complete ......\r\n");
+            LOG("mpu_set_sensors complete ......\r\n");
         delay_ms(10);
         if (!mpu_configure_fifo(INV_XYZ_GYRO | INV_XYZ_ACCEL)) //设置fifo
             printf("mpu_configure_fifo complete ......\r\n");
         delay_ms(10);
         if (!mpu_set_sample_rate(DEFAULT_MPU_HZ)) //设置采集样率
             printf("mpu_set_sample_rate complete ......\r\n");
-        delay_ms(50);
+        delay_ms(100);
         if (!dmp_load_motion_driver_firmware()) //加载dmp固件
             printf("dmp_load_motion_driver_firmware complete ......\r\n");
         delay_ms(10);
@@ -66,7 +67,8 @@ void DMP_Init(void)
         delay_ms(10);
         if (!mpu_set_dmp_state(1)) //使能
             printf("mpu_set_dmp_state complete ......\r\n");
-        initialized = 1;
+        
+        mpu_initialized = 1;
     }
     else
     {

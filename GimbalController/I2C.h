@@ -9,6 +9,6 @@ void MPU6050_WriteSingle(unsigned char device,unsigned char address,unsigned cha
 float MPU6050_GetTemperature(void);
 void MPU6050_GetGyroXYZ(short XYZ[3]);
 
-extern int initialized;
+extern int mpu_initialized;
 extern unsigned short TxDoneFlag;
 extern unsigned short RxDoneFlag;

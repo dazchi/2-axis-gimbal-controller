@@ -2,8 +2,8 @@
 #include "mathf.h"
 PID pid_Roll;
 PID pid_Pitch;
-int slow_flag_Pitch;
-int slow_flag_Roll;
+int slow_flag_Pitch = 0;
+int slow_flag_Roll = 0;
 
 void PID_Initial(PID *pid)
 {
@@ -39,7 +39,7 @@ float PID_Increase(PID *pid, float TargetAngle) //增量型 0.02,0.04,0.4
     return pid->theta;
 }
 
-float PID_Increase_Pitch(float TargetAngle) //增量型 0.02,0.04,0.4
+float PID_Increase_Pitch(float TargetAngle) 
 {
     pid_Pitch.SetAngle = TargetAngle;
     pid_Pitch.err = pid_Pitch.SetAngle - pid_Pitch.ActualAngle;
@@ -75,7 +75,7 @@ float PID_Increase_Pitch(float TargetAngle) //增量型 0.02,0.04,0.4
     return pid_Pitch.theta;
 }
 
-float PID_Increase_Roll(float TargetAngle) //增量型 0.02,0.04,0.4
+float PID_Increase_Roll(float TargetAngle) 
 {
     pid_Roll.SetAngle = TargetAngle;
     pid_Roll.err = pid_Roll.SetAngle - pid_Roll.ActualAngle;

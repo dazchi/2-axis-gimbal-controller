@@ -30,7 +30,6 @@ float deviation_Roll = 0;
 float PRY[3] = {0.0};
 int DMPReady_flag = 0;
 int LOG_flag = 0;
-float delta = 0.001;
 
 void main(void);
 #ifdef __cplusplus
@@ -43,15 +42,17 @@ extern "C"
 void main(void)
 {
     R_PG_Clock_Set();
-    InitialLED();
+
     InitialDelay();
+    InitialLED();
     InitialI2C();
     InitialUART();
-
-    SetLED1(1);
+    
+    SetLED1(1);     //Power-On
     DMP_Init();
-    SetLED2(1);
-    delay_ms(5000);
+    SetLED2(1);     //Initialized    
+    //delay_ms(5000);
+
     InitialPWMs();
     EnablePWM_A();
     EnablePWM_B();
@@ -69,8 +70,8 @@ void main(void)
     pid_Roll.UpperLimit = 10.0;
     pid_Roll.LowerLimit = -10.0;
     LOG("Start While Loop.....\r\n");
-    SetLED3(1);
-    R_PG_ExtInterrupt_Set_IRQ0();
+
+    R_PG_ExtInterrupt_Set_IRQ0();       //Enable DMP interrupt
     while (1)
     {
 
@@ -99,15 +100,9 @@ void main(void)
                 // if (LOG_flag)
                 //     LOG("CP:%f,MP:%f,CR:%f,MR:%f\r\n", PRY[1], theta_Pitch, PRY[0], theta_Roll);
 
-                // LOG_flag ^= 1;
-                //SetLED4(LOG_flag);
-            }
-            //	DisablePWM_A();
+                // LOG_flag ^= 1;                
+            }            
         }
-
-        // calcPWM_A_Sine(theta_Pitch);
-        // calcPWM_B_Sine(theta_Pitch);
-        // theta_Pitch += delta;
     }
 }
 

@@ -1,7 +1,7 @@
 #include "I2C.h"
 #include "Delay.h"
 
-int initialized = 0;
+int mpu_initialized = 0;
 unsigned short TxDoneFlag = 1;
 unsigned short RxDoneFlag = 1;
 static unsigned char TxBuffer[4096];
@@ -28,7 +28,8 @@ int I2C_Write(unsigned char SlaveAdd, unsigned char RegAdd, unsigned char length
     TxDoneFlag = 0;
     R_PG_I2C_MasterSend_C0(ctl_byte,TxBuffer, length+1);
     while (!(TxDoneFlag & RxDoneFlag));
-    if(!initialized)
+    
+    if(!mpu_ initialized)
         delay_ms(1);
 
     return 0;
@@ -49,7 +50,8 @@ int I2C_Read(unsigned char SlaveAdd, unsigned char RegAdd, unsigned char length,
     RxDoneFlag = 0;
     R_PG_I2C_MasterReceive_C0(ctl_byte + 1, data, (unsigned int)length);
     while (!(TxDoneFlag & RxDoneFlag));
-    if(!initialized)
+    
+    if(!mpu_ initialized)
         delay_ms(1);
         
     return 0;
