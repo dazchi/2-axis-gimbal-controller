@@ -22,7 +22,7 @@ float Deg2Rad = 0;
 unsigned short phase = 1;
 unsigned short PWM = 0;
 unsigned short PWM_LimitA = PWM_MAX * 0.45;
-unsigned short PWM_LimitB = PWM_MAX * 0.45;
+unsigned short PWM_LimitB = PWM_MAX * 0.5;
 
 
 void InitialPWMs(void)

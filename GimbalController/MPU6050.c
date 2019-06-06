@@ -62,7 +62,7 @@ void DMP_Init(void)
             printf("dmp_set_fifo_rate complete ......\r\n");
         delay_ms(10);
 
-        run_self_test(); //自检
+        //run_self_test(); //自检
 
         delay_ms(10);
         if (!mpu_set_dmp_state(1)) //使能

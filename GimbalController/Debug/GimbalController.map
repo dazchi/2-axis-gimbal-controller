@@ -1,4 +1,4 @@
-Optimizing Linkage Editor (V.10.00.00.001)        04-Jun-2019 03:58:28
+Optimizing Linkage Editor (V.10.00.00.001)        06-Jun-2019 03:00:12
 
 *** Options ***
 
@@ -61,13 +61,13 @@ B_2
 R_2
                                   00002174  0000218f        1c   2
 B
-                                  00002190  000026eb       55c   4
+                                  00002190  000026e3       554   4
 R
-                                  000026ec  00002a3f       354   4
+                                  000026e4  00002a3b       358   4
 SU
-                                  00002a40  00002d3f       300   4
+                                  00002a3c  00002d3b       300   4
 SI
-                                  00002d40  00002e3f       100   4
+                                  00002d3c  00002e3b       100   4
 PResetPRG
                                   fffc0100  fffc0145        46   1
 C_1
@@ -75,26 +75,26 @@ C_1
 C_2
                                   fffc0ef8  fffc110f       218   2
 C
-                                  fffc1110  fffc15c8       4b9   4
+                                  fffc1110  fffc1538       429   4
 C$DSEC
-                                  fffc15cc  fffc15ef        24   4
+                                  fffc153c  fffc155f        24   4
 C$BSEC
-                                  fffc15f0  fffc1607        18   4
+                                  fffc1560  fffc1577        18   4
 C$VECT
-                                  fffc1608  fffc1a07       400   4
+                                  fffc1578  fffc1977       400   4
 D
-                                  fffc1a08  fffc1d5b       354   4
+                                  fffc1978  fffc1ccf       358   4
 D_2
-                                  fffc1d5c  fffc1d77        1c   2
+                                  fffc1cd0  fffc1ceb        1c   2
 D_1
-                                  fffc1d78  fffc1eac       135   1
+                                  fffc1cec  fffc1e20       135   1
 P
-                                  fffc1ead  fffd028c      e3e0   1
+                                  fffc1e21  fffd0118      e2f8   1
 W_1
-                                  fffd028d  fffd028d         0   1
+                                  fffd0119  fffd0119         0   1
 W_2
-                                  fffd028e  fffd02b3        26   2
+                                  fffd011a  fffd013f        26   2
 W
-                                  fffd02b4  fffd02b4         0   4
+                                  fffd0140  fffd0140         0   4
 FIXEDVECT
                                   ffffffd0  ffffffff        30   4
