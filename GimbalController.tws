@@ -17,7 +17,7 @@
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\resetprg.c" 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\SCI\R_PG_SCI_C2.c" 
 [WORKSPACE_FILE_STATES]
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GimbalController.c" -8 -31 1562 372 1 0 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GimbalController.c" 0 0 1556 372 0 0 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\I2C.c" 78 78 1390 376 0 3 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\I2C.h" 104 104 1390 376 0 4 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\MPU6050.c" 0 0 1520 123 0 6 
@@ -25,7 +25,7 @@
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\SCI\R_PG_SCI_C2.c" 26 26 1006 324 0 1 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\inv_mpu.c" 26 26 1390 330 0 8 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\inv_mpu.h" 0 0 1390 330 0 7 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\resetprg.c" 52 52 1390 376 0 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\resetprg.c" -8 -31 1562 58 1 2 
 [LOADED_PROJECTS]
 "GimbalController" 
 [END]

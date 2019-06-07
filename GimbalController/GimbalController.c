@@ -31,6 +31,8 @@ float PRY[3] = {0.0};
 int DMPReady_flag = 0;
 int LOG_flag = 0;
 
+int Stop_flag = 0;
+
 void main(void);
 #ifdef __cplusplus
 extern "C"
@@ -47,11 +49,10 @@ void main(void)
     InitialLED();
     InitialI2C();
     InitialUART();
-    
-    SetLED1(1);     //Power-On
+
+    SetLED1(1); //Power-On
     DMP_Init();
-    SetLED2(1);     //Initialized    
-    //delay_ms(5000);
+    SetLED2(1); //Initialized
 
     InitialPWMs();
     EnablePWM_A();
@@ -62,16 +63,16 @@ void main(void)
     pid_Pitch.Kp = 0.02;
     pid_Pitch.Ki = 0.025;
     pid_Pitch.Kd = 1;
-    pid_Pitch.UpperLimit = 10.0;
-    pid_Pitch.LowerLimit = -10.0;
-    pid_Roll.Kp = 0.6;
-    pid_Roll.Ki = 0.05;
-    pid_Roll.Kd = 5.0;
-    pid_Roll.UpperLimit = 10.0;
-    pid_Roll.LowerLimit = -10.0;
+    pid_Pitch.UpperLimit = 5.0;
+    pid_Pitch.LowerLimit = -5.0;
+    pid_Roll.Kp = 0.5;  //0.6 0.05 5.0, 
+    pid_Roll.Ki = 0.08;
+    pid_Roll.Kd = 5.2;
+    pid_Roll.UpperLimit = 5.0;
+    pid_Roll.LowerLimit = -5.0;
     LOG("Start While Loop.....\r\n");
 
-    R_PG_ExtInterrupt_Set_IRQ0();       //Enable DMP interrupt
+    R_PG_ExtInterrupt_Set_IRQ0(); //Enable DMP interrupt
     while (1)
     {
 
@@ -100,8 +101,19 @@ void main(void)
                 // if (LOG_flag)
                 //     LOG("CP:%f,MP:%f,CR:%f,MR:%f\r\n", PRY[1], theta_Pitch, PRY[0], theta_Roll);
 
-                // LOG_flag ^= 1;                
-            }            
+                // LOG_flag ^= 1;
+            }
+        }
+
+        if (Stop_flag)
+        {
+            DisablePWM_A();
+            DisablePWM_B();
+        }
+        else
+        {
+            EnablePWM_A();
+            EnablePWM_B();
         }
     }
 }
