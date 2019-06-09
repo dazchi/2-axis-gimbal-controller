@@ -5,7 +5,7 @@
 * Copyright (C) 2010 Renesas Electronics Corporation.
 * and Renesas Solutions Corporation. All rights reserved.
 ******************************************************************************
-* File Name    : R_PG_Timer_GPT_U0.h
+* File Name    : R_PG_ADC_12_S12ADA0.h
 * Version      : 1.00
 * Description  : 
 ******************************************************************************
@@ -17,15 +17,15 @@
 /******************************************************************************
 Includes   <System Includes> , "Project Includes"
 ******************************************************************************/
-#include "r_pdl_gpt.h"
-#include "r_pdl_gpt_RX62Txx.h"
+#include "r_pdl_adc_12.h"
+#include "r_pdl_adc_12_RX62Txx.h"
+#include "R_PG_IntFuncsExtern.h"
 
-bool R_PG_Timer_Set_GPT_U0(void);
-bool R_PG_Timer_SynchronouslyStartCount_GPT_U0(bool gpt0, bool gpt1, bool gpt2, bool gpt3);
-bool R_PG_Timer_SynchronouslyHaltCount_GPT_U0(bool gpt0, bool gpt1, bool gpt2, bool gpt3);
-bool R_PG_Timer_SynchronouslyClearCounter_GPT_U0(bool gpt0, bool gpt1, bool gpt2, bool gpt3);
-bool R_PG_Timer_GetRequestFlag_GPT_U0(bool * loco_rising, bool * loco_deviation, bool * loco_ov, bool * ext_rising, bool * ext_falling);
-bool R_PG_Timer_StopModule_GPT_U0(void);
+bool R_PG_ADC_12_Set_S12ADA0(void);
+bool R_PG_ADC_12_StartConversionSW_S12ADA0(void);
+bool R_PG_ADC_12_StopConversion_S12ADA0(void);
+bool R_PG_ADC_12_GetResult_S12ADA0(uint16_t * result);
+bool R_PG_ADC_12_StopModule_S12ADA0(void);
 
 
 

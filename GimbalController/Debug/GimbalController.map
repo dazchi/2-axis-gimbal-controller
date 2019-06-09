@@ -1,4 +1,4 @@
-Optimizing Linkage Editor (V.10.00.00.001)        08-Jun-2019 02:19:27
+Optimizing Linkage Editor (V.10.00.00.001)        10-Jun-2019 03:10:47
 
 *** Options ***
 
@@ -14,6 +14,7 @@ Optimizing Linkage Editor (V.10.00.00.001)        08-Jun-2019 02:19:27
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Delay.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\GimbalController.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\I2C.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Interrupt_ADC_12.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Interrupt_CMT.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Interrupt_IIC.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\Interrupt_INTC.obj"
@@ -24,6 +25,8 @@ Optimizing Linkage Editor (V.10.00.00.001)        08-Jun-2019 02:19:27
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\MPU6050.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\PID.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\PWM.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ADC_12.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ADC_12_S12ADA0.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Clock.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ExtInterrupt_IRQ0.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ExtInterrupt_IRQ1.obj"
@@ -53,21 +56,21 @@ Optimizing Linkage Editor (V.10.00.00.001)        08-Jun-2019 02:19:27
 SECTION                            START      END         SIZE   ALIGN
 
 B_1
-                                  00001000  0000201e      101f   1
+                                  00001000  00002020      1021   1
 R_1
-                                  0000201f  00002153       135   1
+                                  00002021  00002155       135   1
 B_2
-                                  00002154  00002173        20   2
+                                  00002156  00002187        32   2
 R_2
-                                  00002174  0000218f        1c   2
+                                  00002188  000021a3        1c   2
 B
-                                  00002190  000026e3       554   4
+                                  000021a4  000026f7       554   4
 R
-                                  000026e4  00002a3f       35c   4
+                                  000026f8  00002a57       360   4
 SU
-                                  00002a40  00002d3f       300   4
+                                  00002a58  00002d57       300   4
 SI
-                                  00002d40  00002e3f       100   4
+                                  00002d58  00002e57       100   4
 PResetPRG
                                   fffc0100  fffc0145        46   1
 C_1
@@ -83,18 +86,18 @@ C$BSEC
 C$VECT
                                   fffc1578  fffc1977       400   4
 D
-                                  fffc1978  fffc1cd3       35c   4
+                                  fffc1978  fffc1cd7       360   4
 D_2
-                                  fffc1cd4  fffc1cef        1c   2
+                                  fffc1cd8  fffc1cf3        1c   2
 D_1
-                                  fffc1cf0  fffc1e24       135   1
+                                  fffc1cf4  fffc1e28       135   1
 P
-                                  fffc1e25  fffd0138      e314   1
+                                  fffc1e29  fffd0f40      f118   1
 W_1
-                                  fffd0139  fffd0139         0   1
+                                  fffd0f41  fffd0f41         0   1
 W_2
-                                  fffd013a  fffd015f        26   2
+                                  fffd0f42  fffd0f67        26   2
 W
-                                  fffd0160  fffd0160         0   4
+                                  fffd0f68  fffd0f68         0   4
 FIXEDVECT
                                   ffffffd0  ffffffff        30   4

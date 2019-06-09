@@ -26,12 +26,13 @@
 float theta_Pitch = 0;
 float theta_Roll = 0;
 float deviation_Pitch = 0;
-float deviation_Roll = 0;
+float deviation_Roll = -5;
 float PRY[3] = {0.0};
 int DMPReady_flag = 0;
 int LOG_flag = 0;
 
 int Stop_flag = 0;
+unsigned int ADC_result = 0;
 
 void main(void);
 #ifdef __cplusplus
@@ -50,7 +51,13 @@ void main(void)
     InitialI2C();
     InitialUART();
 
+    R_PG_ADC_12_Set();
+    R_PG_ADC_12_Set_S12ADA0();
+
     SetLED1(1); //Power-On
+    SetLED4(1);
+    while (Stop_flag);
+    SetLED4(0);
     DMP_Init();
     SetLED2(1); //Initialized
 
@@ -60,21 +67,23 @@ void main(void)
 
     PID_Initial(&pid_Pitch);
     PID_Initial(&pid_Roll);
-    pid_Pitch.Kp = 0.02;
-    pid_Pitch.Ki = 0.025;
-    pid_Pitch.Kd = 1;
-    pid_Pitch.UpperLimit = 5.0;
-    pid_Pitch.LowerLimit = -5.0;
-    pid_Roll.Kp = 0.5;  //0.6 0.05 5.0, 
-    pid_Roll.Ki = 0.08;
-    pid_Roll.Kd = 5.2;
-    pid_Roll.UpperLimit = 5.0;
-    pid_Roll.LowerLimit = -5.0;
+    pid_Pitch.Kp = 0.008; //0.02 0.025 1,
+    pid_Pitch.Ki = 0.03;
+    pid_Pitch.Kd = 1.1;
+    pid_Pitch.UpperLimit = 0.5;
+    pid_Pitch.LowerLimit = -0.5;
+    pid_Roll.Kp = 0.6; //0.6 0.05 5.0,0.5 0.08 5.2
+    pid_Roll.Ki = 0.06;
+    pid_Roll.Kd = 5;
+    pid_Roll.UpperLimit = 0.5;
+    pid_Roll.LowerLimit = -0.5;
     LOG("Start While Loop.....\r\n");
 
     R_PG_ExtInterrupt_Set_IRQ0(); //Enable DMP interrupt
     while (1)
     {
+
+        R_PG_ADC_12_StartConversionSW_S12ADA0();
 
         if (DMPReady_flag)
         {
@@ -127,6 +136,11 @@ void Irq1IntFunc(void)
 {
 }
 
+void S12ad0IntFunc(void)
+{
+    R_PG_ADC_12_GetResult_S12ADA0(&ADC_result);
+    deviation_Roll = (((float)(((int)(ADC_result) - 2047)/100))/5.0) ;
+}
 #ifdef __cplusplus
 void abort(void)
 {

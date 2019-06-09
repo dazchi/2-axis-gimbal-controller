@@ -28,7 +28,7 @@
 * Copyright (C) 2010 Renesas Electronics Corporation.
 * and Renesas Solutions Corporation. All rights reserved.
 ******************************************************************************
-* File Name    : R_PG_Timer_CMT_U0.c
+* File Name    : R_PG_ADC_12_S12ADA0.c
 * Version      : 1.00
 * Device(s)    : 
 * Tool-Chain   : 
@@ -44,7 +44,7 @@
 /******************************************************************************
 Includes   <System Includes> , "Project Includes"
 ******************************************************************************/
-#include "R_PG_Timer_CMT_U0.h"
+#include "R_PG_ADC_12_S12ADA0.h"
 
 
 /******************************************************************************
@@ -52,28 +52,31 @@ Includes   <System Includes> , "Project Includes"
 *
 * Include      : 
 *
-* Declaration  : bool R_PG_Timer_Start_CMT_U0_C0(void)
+* Declaration  : bool R_PG_ADC_12_Set_S12ADA0(void)
 *
-* Function Name: R_PG_Timer_Start_CMT_U0_C0
+* Function Name: R_PG_ADC_12_Set_S12ADA0
 *
-* Description  : Set up the CMT and start the count
+* Description  : Set up the A/D converter unit
 *
 * Arguments    : None
 *
 * Return Value : true  : Setting was made correctly.
 *              : false : Setting failed.
 *
-* Calling Functions : R_CMT_Create
+* Calling Functions : R_ADC_12_CreateUnit
 *
 * Details      : Please refer to the Reference Manual.
 ******************************************************************************/
-bool R_PG_Timer_Start_CMT_U0_C0(void)
+bool R_PG_ADC_12_Set_S12ADA0(void)
 {
-	return R_CMT_Create(
+	return R_ADC_12_CreateUnit(
 		0,
-		PDL_CMT_PCLK_DIV_8 | PDL_CMT_DTC_TRIGGER_DISABLE,
-		4999,
-		Cmt0IntFunc,
+		PDL_ADC_12_MODE_SINGLE | PDL_ADC_12_CHANNELS_OPTION_0 | PDL_ADC_12_SAMPLE_AND_HOLD_ENABLE | PDL_ADC_12_DATA_PRECISION_12 | PDL_ADC_12_RETAIN_RESULT | PDL_ADC_12_DATA_ALIGNMENT_RIGHT | PDL_ADC_12_DTC_TRIGGER_DISABLE | PDL_ADC_12_ADSSTR_SPECIFY | PDL_ADC_12_SELF_DIAGNOSTIC_DISABLE,
+		PDL_NO_DATA,
+		PDL_NO_DATA,
+		40000000,
+		20,
+		S12ad0IntFunc,
 		15
 	);
 
@@ -84,28 +87,24 @@ bool R_PG_Timer_Start_CMT_U0_C0(void)
 *
 * Include      : 
 *
-* Declaration  : bool R_PG_Timer_HaltCount_CMT_U0_C0(void)
+* Declaration  : bool R_PG_ADC_12_StartConversionSW_S12ADA0(void)
 *
-* Function Name: R_PG_Timer_HaltCount_CMT_U0_C0
+* Function Name: R_PG_ADC_12_StartConversionSW_S12ADA0
 *
-* Description  : Halt the CMT count
+* Description  : Start the A/D conversion (Software trigger)
 *
 * Arguments    : None
 *
-* Return Value : true  : Halting succeeded.
-*              : false : Halting failed.
+* Return Value : true  : Setting was made correctly.
+*              : false : Setting failed.
 *
-* Calling Functions : R_CMT_Control
+* Calling Functions : R_ADC_12_Control
 *
 * Details      : Please refer to the Reference Manual.
 ******************************************************************************/
-bool R_PG_Timer_HaltCount_CMT_U0_C0(void)
+bool R_PG_ADC_12_StartConversionSW_S12ADA0(void)
 {
-	return R_CMT_Control(
-		0,
-		PDL_CMT_STOP,
-		0
-	);
+	return R_ADC_12_Control( PDL_ADC_12_0_ON );
 
 }
 
@@ -114,28 +113,24 @@ bool R_PG_Timer_HaltCount_CMT_U0_C0(void)
 *
 * Include      : 
 *
-* Declaration  : bool R_PG_Timer_ResumeCount_CMT_U0_C0(void)
+* Declaration  : bool R_PG_ADC_12_StopConversion_S12ADA0(void)
 *
-* Function Name: R_PG_Timer_ResumeCount_CMT_U0_C0
+* Function Name: R_PG_ADC_12_StopConversion_S12ADA0
 *
-* Description  : Resume the CMT count
+* Description  : Stop the A/D conversion
 *
 * Arguments    : None
 *
-* Return Value : true  : Resuming count succeeded.
-*              : false : Resuming count failed.
+* Return Value : true  : Stopping conversion succeeded.
+*              : false : Stopping conversion failed.
 *
-* Calling Functions : R_CMT_Control
+* Calling Functions : R_ADC_12_Control
 *
 * Details      : Please refer to the Reference Manual.
 ******************************************************************************/
-bool R_PG_Timer_ResumeCount_CMT_U0_C0(void)
+bool R_PG_ADC_12_StopConversion_S12ADA0(void)
 {
-	return R_CMT_Control(
-		0,
-		PDL_CMT_START,
-		0
-	);
+	return R_ADC_12_Control( PDL_ADC_12_0_OFF );
 
 }
 
@@ -144,29 +139,33 @@ bool R_PG_Timer_ResumeCount_CMT_U0_C0(void)
 *
 * Include      : 
 *
-* Declaration  : bool R_PG_Timer_GetCounterValue_CMT_U0_C0(uint16_t * counter_val)
+* Declaration  : bool R_PG_ADC_12_GetResult_S12ADA0(uint16_t * result)
 *
-* Function Name: R_PG_Timer_GetCounterValue_CMT_U0_C0
+* Function Name: R_PG_ADC_12_GetResult_S12ADA0
 *
-* Description  : Acquire the CMT counter value
+* Description  : Get the A/D conversion result
 *
-* Arguments    : uint16_t * counter_val : Destination for storage of the counter value.
+* Arguments    : uint16_t * result : Destination for storage of the result of A/D conversion.
 *
-* Return Value : true  : Acquisition succeeded.
-*              : false : Acquisition failed.
+* Return Value : true  : Acquisition of the result succeeded.
+*              : false : Acquisition of the result failed.
 *
-* Calling Functions : R_CMT_Read
+* Calling Functions : R_ADC_12_Read
 *
 * Details      : Please refer to the Reference Manual.
 ******************************************************************************/
-bool R_PG_Timer_GetCounterValue_CMT_U0_C0(uint16_t * counter_val)
+bool R_PG_ADC_12_GetResult_S12ADA0(uint16_t * result)
 {
-	if( counter_val == 0 ){ return false; }
+	if( result == 0 )
+	{
+		return false;
+	}
 
-	return R_CMT_Read(
+	return R_ADC_12_Read(
 		0,
 		PDL_NO_PTR,
-		counter_val
+		result,
+		PDL_NO_PTR
 	);
 
 }
@@ -176,54 +175,24 @@ bool R_PG_Timer_GetCounterValue_CMT_U0_C0(uint16_t * counter_val)
 *
 * Include      : 
 *
-* Declaration  : bool R_PG_Timer_SetCounterValue_CMT_U0_C0(uint16_t counter_val)
+* Declaration  : bool R_PG_ADC_12_StopModule_S12ADA0(void)
 *
-* Function Name: R_PG_Timer_SetCounterValue_CMT_U0_C0
+* Function Name: R_PG_ADC_12_StopModule_S12ADA0
 *
-* Description  : Set the CMT counter value
-*
-* Arguments    : uint16_t counter_val : Value to be set to the counter.
-*
-* Return Value : true  : Setting of the counter value succeeded.
-*              : false : Setting of the counter value failed.
-*
-* Calling Functions : R_CMT_Control
-*
-* Details      : Please refer to the Reference Manual.
-******************************************************************************/
-bool R_PG_Timer_SetCounterValue_CMT_U0_C0(uint16_t counter_val)
-{
-	return R_CMT_Control(
-		0,
-		PDL_CMT_COUNTER,
-		counter_val
-	);
-
-}
-
-/******************************************************************************
-* ID           : 
-*
-* Include      : 
-*
-* Declaration  : bool R_PG_Timer_StopModule_CMT_U0(void)
-*
-* Function Name: R_PG_Timer_StopModule_CMT_U0
-*
-* Description  : Shut down the CMT unit
+* Description  : Shut down the A/D converter unit
 *
 * Arguments    : None
 *
 * Return Value : true  : Shutting down succeeded.
 *              : false : Shutting down failed.
 *
-* Calling Functions : R_CMT_Destroy
+* Calling Functions : R_ADC_12_Destroy
 *
 * Details      : Please refer to the Reference Manual.
 ******************************************************************************/
-bool R_PG_Timer_StopModule_CMT_U0(void)
+bool R_PG_ADC_12_StopModule_S12ADA0(void)
 {
-	return R_CMT_Destroy( 0 );
+	return R_ADC_12_Destroy( PDL_ADC_12_0_DESTROY );
 
 }
 

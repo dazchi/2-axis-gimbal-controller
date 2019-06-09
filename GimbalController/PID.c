@@ -1,4 +1,5 @@
 #include "PID.h"
+#include "math.h"
 #include "mathf.h"
 PID pid_Roll;
 PID pid_Pitch;
@@ -13,6 +14,8 @@ void PID_Initial(PID *pid)
     pid->err_last = 0.0; //上次誤差
     pid->err_prev = 0.0; //上上次誤差
     pid->integral = 0.0;
+    pid->UpperLimit = 0.0;
+    pid->LowerLimit = 0.0;
     pid->theta = 0.0;
 }
 
@@ -27,7 +30,7 @@ float PID_Update(PID *pid, float TargetAngle) //位置型
     return pid->theta;
 }
 
-float PID_Increase(PID *pid, float TargetAngle) //增量型 0.02,0.04,0.4
+float PID_Increase(PID *pid, float TargetAngle) //增量型
 {
     pid->SetAngle = TargetAngle;
     pid->err = pid->SetAngle - pid->ActualAngle;
@@ -39,16 +42,16 @@ float PID_Increase(PID *pid, float TargetAngle) //增量型 0.02,0.04,0.4
     return pid->theta;
 }
 
-float PID_Increase_Pitch(float TargetAngle) 
+float PID_Increase_Pitch(float TargetAngle)
 {
     pid_Pitch.SetAngle = TargetAngle;
     pid_Pitch.err = pid_Pitch.SetAngle - pid_Pitch.ActualAngle;
 
-    if (fabsf(pid_Pitch.err) > 15)
+    if (fabsf(pid_Pitch.err) > 10)
     {
         slow_flag_Pitch = 1;
     }
-    else if (fabsf(pid_Pitch.err) < 1)
+    else if (fabsf(pid_Pitch.err) < 0.5)
     {
         slow_flag_Pitch = 0;
     }
@@ -75,16 +78,16 @@ float PID_Increase_Pitch(float TargetAngle)
     return pid_Pitch.theta;
 }
 
-float PID_Increase_Roll(float TargetAngle) 
+float PID_Increase_Roll(float TargetAngle)
 {
     pid_Roll.SetAngle = TargetAngle;
     pid_Roll.err = pid_Roll.SetAngle - pid_Roll.ActualAngle;
 
-    if (fabsf(pid_Roll.err) > 15)
+    if (fabsf(pid_Roll.err) > 10)
     {
         slow_flag_Roll = 1;
     }
-    else if (fabsf(pid_Roll.err) < 1)
+    else if (fabsf(pid_Roll.err) < 0.5)
     {
         slow_flag_Roll = 0;
     }
@@ -107,6 +110,19 @@ float PID_Increase_Roll(float TargetAngle)
             }
         }
     }
+    else
+    {
+
+        if (pid_Roll.theta > pid_Roll.UpperLimit)
+        {
+            return pid_Roll.UpperLimit;
+        }
+        else if (pid_Roll.theta < pid_Roll.LowerLimit)
+        {
+            return pid_Roll.LowerLimit;
+        }
+    }
 
     return pid_Roll.theta;
 }
+

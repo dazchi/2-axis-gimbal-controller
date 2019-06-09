@@ -28,7 +28,7 @@
 * Copyright (C) 2010 Renesas Electronics Corporation.
 * and Renesas Solutions Corporation. All rights reserved.
 ******************************************************************************
-* File Name    : R_PG_Clock.c
+* File Name    : R_PG_ADC_12.c
 * Version      : 1.00
 * Device(s)    : 
 * Tool-Chain   : 
@@ -44,7 +44,7 @@
 /******************************************************************************
 Includes   <System Includes> , "Project Includes"
 ******************************************************************************/
-#include "R_PG_Clock.h"
+#include "R_PG_ADC_12.h"
 
 
 /******************************************************************************
@@ -52,28 +52,33 @@ Includes   <System Includes> , "Project Includes"
 *
 * Include      : 
 *
-* Declaration  : bool R_PG_Clock_Set(void)
+* Declaration  : bool R_PG_ADC_12_Set(void)
 *
-* Function Name: R_PG_Clock_Set
+* Function Name: R_PG_ADC_12_Set
 *
-* Description  : Set up the clocks
+* Description  : Configure the setting for both A/D converter units
 *
 * Arguments    : None
 *
 * Return Value : true  : Setting was made correctly.
 *              : false : Setting failed.
 *
-* Calling Functions : R_CGC_Set
+* Calling Functions : R_ADC_12_CreateChannel
 *
 * Details      : Please refer to the Reference Manual.
 ******************************************************************************/
-bool R_PG_Clock_Set(void)
+bool R_PG_ADC_12_Set(void)
 {
-	return R_CGC_Set(
-		10000000,
-		80000000,
-		40000000,
-		PDL_CGC_OSC_STOP_DISABLE
+	return R_ADC_12_CreateChannel(
+		PDL_NO_DATA,
+		PDL_NO_DATA,
+		PDL_NO_DATA,
+		PDL_NO_DATA,
+		PDL_NO_DATA,
+		PDL_NO_DATA,
+		PDL_NO_DATA,
+		PDL_NO_FUNC,
+		0
 	);
 
 }
