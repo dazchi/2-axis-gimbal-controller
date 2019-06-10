@@ -9,7 +9,7 @@
 * Version      : 1.00
 * Description  : 
 ******************************************************************************
-* History : 10.06.2019 Version Description
+* History : 11.06.2019 Version Description
 *         :   
 ******************************************************************************/
 
@@ -26,6 +26,11 @@ bool R_PG_Timer_HaltCount_CMT_U0_C0(void);
 bool R_PG_Timer_ResumeCount_CMT_U0_C0(void);
 bool R_PG_Timer_GetCounterValue_CMT_U0_C0(uint16_t * counter_val);
 bool R_PG_Timer_SetCounterValue_CMT_U0_C0(uint16_t counter_val);
+bool R_PG_Timer_Start_CMT_U0_C1(void);
+bool R_PG_Timer_HaltCount_CMT_U0_C1(void);
+bool R_PG_Timer_ResumeCount_CMT_U0_C1(void);
+bool R_PG_Timer_GetCounterValue_CMT_U0_C1(uint16_t * counter_val);
+bool R_PG_Timer_SetCounterValue_CMT_U0_C1(uint16_t counter_val);
 bool R_PG_Timer_StopModule_CMT_U0(void);
 
 

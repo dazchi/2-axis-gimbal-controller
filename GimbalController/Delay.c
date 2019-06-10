@@ -3,7 +3,7 @@
 unsigned short ms = 0;
 
 void InitialDelay(void){
-    R_PG_Timer_Start_CMT_U0_C0();
+    
 }
 
 void delay_cycles(unsigned long count)
@@ -17,7 +17,7 @@ void delay_ms(unsigned short ms_delay)
     ms = 0;
     R_PG_Timer_Start_CMT_U0_C0();
     while (ms < ms_delay);
-    R_PG_Timer_StopModule_CMT_U0();
+    R_PG_Timer_HaltCount_CMT_U0_C0(); 
 }
 
 void _NOP(void){

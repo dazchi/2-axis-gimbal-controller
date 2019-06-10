@@ -1,12 +1,12 @@
 typedef struct
 {
-    float SetAngle;
-    float ActualAngle;
+    float SetValue;
+    float ActualValue;
     float err;      //本次誤差
     float err_last; //上次誤差
     float err_prev; //上上次誤差
     float integral;
-    float theta;
+    float Result;
     float Kp, Ki, Kd;
     float Slow_Kp, Slow_Ki, Slow_Kd;       
     float UpperLimit, LowerLimit;

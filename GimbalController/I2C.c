@@ -23,8 +23,7 @@ int I2C_Write(unsigned char SlaveAdd, unsigned char RegAdd, unsigned char length
         TxBuffer[i+1] = data[i];
     }
         
-    while (!(TxDoneFlag & RxDoneFlag))
-        ;
+    while (!(TxDoneFlag & RxDoneFlag));
     TxDoneFlag = 0;
     R_PG_I2C_MasterSend_C0(ctl_byte,TxBuffer, length+1);
     while (!(TxDoneFlag & RxDoneFlag));

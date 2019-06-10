@@ -1,0 +1,9 @@
+-cpu=rx600
+-lang=c
+-include="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController","C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src"
+-output=obj="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ADC_12_S12ADA1.obj"
+-debug
+-optimize=1
+-speed
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\AD_12\R_PG_ADC_12_S12ADA1.c"
+-nologo

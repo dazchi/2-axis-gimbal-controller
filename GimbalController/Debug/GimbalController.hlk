@@ -22,6 +22,7 @@
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\PWM.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ADC_12.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ADC_12_S12ADA0.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ADC_12_S12ADA1.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Clock.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ExtInterrupt_IRQ0.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ExtInterrupt_IRQ1.obj"

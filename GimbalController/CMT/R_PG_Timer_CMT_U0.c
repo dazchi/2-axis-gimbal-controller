@@ -36,7 +36,7 @@
 * Description  : 
 * Limitations  : 
 ******************************************************************************
-* History : 10.06.2019 Version Description
+* History : 11.06.2019 Version Description
 *         :   
 ******************************************************************************/
 
@@ -195,6 +195,160 @@ bool R_PG_Timer_SetCounterValue_CMT_U0_C0(uint16_t counter_val)
 {
 	return R_CMT_Control(
 		0,
+		PDL_CMT_COUNTER,
+		counter_val
+	);
+
+}
+
+/******************************************************************************
+* ID           : 
+*
+* Include      : 
+*
+* Declaration  : bool R_PG_Timer_Start_CMT_U0_C1(void)
+*
+* Function Name: R_PG_Timer_Start_CMT_U0_C1
+*
+* Description  : Set up the CMT and start the count
+*
+* Arguments    : None
+*
+* Return Value : true  : Setting was made correctly.
+*              : false : Setting failed.
+*
+* Calling Functions : R_CMT_Create
+*
+* Details      : Please refer to the Reference Manual.
+******************************************************************************/
+bool R_PG_Timer_Start_CMT_U0_C1(void)
+{
+	return R_CMT_Create(
+		1,
+		PDL_CMT_PCLK_DIV_512 | PDL_CMT_DTC_TRIGGER_DISABLE,
+		39062,
+		Cmt1IntFunc,
+		15
+	);
+
+}
+
+/******************************************************************************
+* ID           : 
+*
+* Include      : 
+*
+* Declaration  : bool R_PG_Timer_HaltCount_CMT_U0_C1(void)
+*
+* Function Name: R_PG_Timer_HaltCount_CMT_U0_C1
+*
+* Description  : Halt the CMT count
+*
+* Arguments    : None
+*
+* Return Value : true  : Halting succeeded.
+*              : false : Halting failed.
+*
+* Calling Functions : R_CMT_Control
+*
+* Details      : Please refer to the Reference Manual.
+******************************************************************************/
+bool R_PG_Timer_HaltCount_CMT_U0_C1(void)
+{
+	return R_CMT_Control(
+		1,
+		PDL_CMT_STOP,
+		0
+	);
+
+}
+
+/******************************************************************************
+* ID           : 
+*
+* Include      : 
+*
+* Declaration  : bool R_PG_Timer_ResumeCount_CMT_U0_C1(void)
+*
+* Function Name: R_PG_Timer_ResumeCount_CMT_U0_C1
+*
+* Description  : Resume the CMT count
+*
+* Arguments    : None
+*
+* Return Value : true  : Resuming count succeeded.
+*              : false : Resuming count failed.
+*
+* Calling Functions : R_CMT_Control
+*
+* Details      : Please refer to the Reference Manual.
+******************************************************************************/
+bool R_PG_Timer_ResumeCount_CMT_U0_C1(void)
+{
+	return R_CMT_Control(
+		1,
+		PDL_CMT_START,
+		0
+	);
+
+}
+
+/******************************************************************************
+* ID           : 
+*
+* Include      : 
+*
+* Declaration  : bool R_PG_Timer_GetCounterValue_CMT_U0_C1(uint16_t * counter_val)
+*
+* Function Name: R_PG_Timer_GetCounterValue_CMT_U0_C1
+*
+* Description  : Acquire the CMT counter value
+*
+* Arguments    : uint16_t * counter_val : Destination for storage of the counter value.
+*
+* Return Value : true  : Acquisition succeeded.
+*              : false : Acquisition failed.
+*
+* Calling Functions : R_CMT_Read
+*
+* Details      : Please refer to the Reference Manual.
+******************************************************************************/
+bool R_PG_Timer_GetCounterValue_CMT_U0_C1(uint16_t * counter_val)
+{
+	if( counter_val == 0 ){ return false; }
+
+	return R_CMT_Read(
+		1,
+		PDL_NO_PTR,
+		counter_val
+	);
+
+}
+
+/******************************************************************************
+* ID           : 
+*
+* Include      : 
+*
+* Declaration  : bool R_PG_Timer_SetCounterValue_CMT_U0_C1(uint16_t counter_val)
+*
+* Function Name: R_PG_Timer_SetCounterValue_CMT_U0_C1
+*
+* Description  : Set the CMT counter value
+*
+* Arguments    : uint16_t counter_val : Value to be set to the counter.
+*
+* Return Value : true  : Setting of the counter value succeeded.
+*              : false : Setting of the counter value failed.
+*
+* Calling Functions : R_CMT_Control
+*
+* Details      : Please refer to the Reference Manual.
+******************************************************************************/
+bool R_PG_Timer_SetCounterValue_CMT_U0_C1(uint16_t counter_val)
+{
+	return R_CMT_Control(
+		1,
 		PDL_CMT_COUNTER,
 		counter_val
 	);

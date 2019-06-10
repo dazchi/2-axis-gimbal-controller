@@ -15,6 +15,8 @@
 #define printf LOG
 #define q30 (1073741824.0f)
 
+int run_self_test_flag = 0;
+
 enum packet_type_e
 {
     PACKET_TYPE_ACCEL,
@@ -58,16 +60,19 @@ void DMP_Init(void)
                                 DMP_FEATURE_GYRO_CAL))
             printf("dmp_enable_feature complete ......\r\n");
         delay_ms(10);
-        if (!dmp_set_fifo_rate(DEFAULT_MPU_HZ)) //设置速率
+        if (!dmp_set_fifo_rate(DMP_SAMPLE_RATE)) //设置速率
             printf("dmp_set_fifo_rate complete ......\r\n");
         delay_ms(10);
 
-        //run_self_test(); //自检
-
-        delay_ms(10);
+        if (run_self_test_flag)
+        {
+            run_self_test(); //自检
+            delay_ms(10);
+        }
+        
         if (!mpu_set_dmp_state(1)) //使能
             printf("mpu_set_dmp_state complete ......\r\n");
-        
+
         mpu_initialized = 1;
     }
     else
@@ -197,7 +202,7 @@ static void run_self_test(void)
         dmp_set_gyro_bias(gyro); //重新校准陀螺仪
         LOG("Gyro Recalibrated......\r\n");
 
-        mpu_get_accel_sens(&accel_sens); //获得加速计的灵敏度因子    
+        mpu_get_accel_sens(&accel_sens); //获得加速计的灵敏度因子
         accel[0] *= accel_sens;
         accel[1] *= accel_sens;
         accel[2] *= accel_sens;
@@ -214,5 +219,3 @@ static void run_self_test(void)
     // 原文：https://blog.csdn.net/a1058191679/article/details/88592757
     // 版权声明：本文为博主原创文章，转载请附上博文链接！
 }
-
-
