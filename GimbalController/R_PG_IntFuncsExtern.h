@@ -9,7 +9,7 @@
 * Version      : 
 * Description  : 
 ******************************************************************************
-* History : 11.06.2019 Version Description
+* History : 12.06.2019 Version Description
 *         :   
 ******************************************************************************/
 
@@ -19,6 +19,7 @@ extern void Irq0IntFunc(void);
 extern void Irq1IntFunc(void);
 extern void Cmt0IntFunc(void);
 extern void Cmt1IntFunc(void);
+extern void Cmt2IntFunc(void);
 extern void IIC0MasterReFunc(void);
 extern void IIC0MasterTrFunc(void);
 extern void S12ad0IntFunc(void);

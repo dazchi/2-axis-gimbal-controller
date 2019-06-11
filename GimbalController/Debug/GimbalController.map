@@ -1,4 +1,4 @@
-Optimizing Linkage Editor (V.10.00.00.001)        11-Jun-2019 03:12:45
+Optimizing Linkage Editor (V.10.00.00.001)        12-Jun-2019 04:30:26
 
 *** Options ***
 
@@ -36,6 +36,7 @@ Optimizing Linkage Editor (V.10.00.00.001)        11-Jun-2019 03:12:45
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_IO_PORT_P9.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_SCI_C2.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_CMT_U0.obj"
+-input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_CMT_U1.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_GPT_U0.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_GPT_U0_C0.obj"
 -input="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_Timer_GPT_U0_C1.obj"
@@ -67,11 +68,11 @@ R_2
 B
                                   000021a4  00002733       590   4
 R
-                                  00002734  00002aab       378   4
+                                  00002734  00002ab7       384   4
 SU
-                                  00002aac  00002dab       300   4
+                                  00002ab8  00002db7       300   4
 SI
-                                  00002dac  00002eab       100   4
+                                  00002db8  00002eb7       100   4
 PResetPRG
                                   fffc0100  fffc0145        46   1
 C_1
@@ -87,18 +88,18 @@ C$BSEC
 C$VECT
                                   fffc1640  fffc1a3f       400   4
 D
-                                  fffc1a40  fffc1db7       378   4
+                                  fffc1a40  fffc1dc3       384   4
 D_2
-                                  fffc1db8  fffc1dd3        1c   2
+                                  fffc1dc4  fffc1ddf        1c   2
 D_1
-                                  fffc1dd4  fffc1f08       135   1
+                                  fffc1de0  fffc1f14       135   1
 P
-                                  fffc1f09  fffd14b8      f5b0   1
+                                  fffc1f15  fffd15f7      f6e3   1
 W_1
-                                  fffd14b9  fffd14b9         0   1
+                                  fffd15f8  fffd15f8         0   1
 W_2
-                                  fffd14ba  fffd14df        26   2
+                                  fffd15f8  fffd161d        26   2
 W
-                                  fffd14e0  fffd14e0         0   4
+                                  fffd1620  fffd1620         0   4
 FIXEDVECT
                                   ffffffd0  ffffffff        30   4

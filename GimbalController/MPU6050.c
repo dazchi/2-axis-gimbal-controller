@@ -15,7 +15,7 @@
 #define printf LOG
 #define q30 (1073741824.0f)
 
-int run_self_test_flag = 0;
+int calibrate_flag = 0;
 
 enum packet_type_e
 {
@@ -34,8 +34,6 @@ void DMP_Init(void)
                                               0, 1, 0,
                                               0, 0, 1};
 
-    delay_ms(1000);
-
     LOG("DMP Initializing...........\r\n");
     if (!mpu_init()) //mpu初始化
     {
@@ -48,7 +46,7 @@ void DMP_Init(void)
         delay_ms(10);
         if (!mpu_set_sample_rate(DEFAULT_MPU_HZ)) //设置采集样率
             printf("mpu_set_sample_rate complete ......\r\n");
-        delay_ms(100);
+        delay_ms(500);
         if (!dmp_load_motion_driver_firmware()) //加载dmp固件
             printf("dmp_load_motion_driver_firmware complete ......\r\n");
         delay_ms(10);
@@ -64,12 +62,9 @@ void DMP_Init(void)
             printf("dmp_set_fifo_rate complete ......\r\n");
         delay_ms(10);
 
-        if (run_self_test_flag)
-        {
-            run_self_test(); //自检
-            delay_ms(10);
-        }
-        
+        run_self_test(); //自检
+        delay_ms(10);
+
         if (!mpu_set_dmp_state(1)) //使能
             printf("mpu_set_dmp_state complete ......\r\n");
 
@@ -194,20 +189,22 @@ static void run_self_test(void)
         /* Test passed. We can trust the gyro data here, so let's push it down
          * to the DMP.
          */
+        if (calibrate_flag)
+        {
+            mpu_get_gyro_sens(&sens); //获得陀螺仪的灵敏度因子
+            gyro[0] = (long)(gyro[0] * sens);
+            gyro[1] = (long)(gyro[1] * sens);
+            gyro[2] = (long)(gyro[2] * sens);
+            dmp_set_gyro_bias(gyro); //重新校准陀螺仪
+            LOG("Gyro Recalibrated......\r\n");
 
-        mpu_get_gyro_sens(&sens); //获得陀螺仪的灵敏度因子
-        gyro[0] = (long)(gyro[0] * sens);
-        gyro[1] = (long)(gyro[1] * sens);
-        gyro[2] = (long)(gyro[2] * sens);
-        dmp_set_gyro_bias(gyro); //重新校准陀螺仪
-        LOG("Gyro Recalibrated......\r\n");
-
-        mpu_get_accel_sens(&accel_sens); //获得加速计的灵敏度因子
-        accel[0] *= accel_sens;
-        accel[1] *= accel_sens;
-        accel[2] *= accel_sens;
-        dmp_set_accel_bias(accel); //重新校准加速计
-        LOG("Accelerometer Recalibrated......\r\n");
+            mpu_get_accel_sens(&accel_sens); //获得加速计的灵敏度因子
+            accel[0] *= accel_sens;
+            accel[1] *= accel_sens;
+            accel[2] *= accel_sens;
+            dmp_set_accel_bias(accel); //重新校准加速计
+            LOG("Accelerometer Recalibrated......\r\n");
+        }
     }
     else
     {

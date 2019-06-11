@@ -23,11 +23,13 @@
 //_SINT ios_base::Init::init_cnt;       // Remove the comment when you use ios
 #endif
 
-float PRY[3] = {0.0};
+float RPY[3] = {0.0};
 float theta_Pitch = 0;
 float theta_Roll = 0;
 float deviation_Pitch = 0;
 float deviation_Roll = 0;
+float origin_Pitch = 0;
+float origin_Roll = 0;
 int DMPReady_flag = 0;
 int LOG_flag = 0;
 int ADC_flag = 0;
@@ -37,6 +39,7 @@ int btn_time_flag = 0;
 int JoyStick_X = 0;
 int JoyStick_Y = 0;
 volatile unsigned int ADC_Result = 0;
+int mode = 0;
 
 void main(void);
 #ifdef __cplusplus
@@ -61,21 +64,27 @@ void main(void)
 
     SetLED1(1); //Power-On
 
-    SetLED4(1);    
+    SetLED4(1);
     R_PG_ADC_12_StartConversionSW_S12ADA0();
-    while(!ADC_flag);
+    while (!ADC_flag)
+        ;
     ADC_flag = 0;
-    if(ADC_Result>3900){
+    if (ADC_Result > 3900)
+    {
         Stop_flag = 1;
-        run_self_test_flag = 0;
-    }else if(ADC_Result<200){
-        Stop_flag = 0;
-        run_self_test_flag = 0;
-    }else{
-        Stop_flag = 0;
-        run_self_test_flag = 1;
+        calibrate_flag = 0;
     }
-    
+    else if (ADC_Result < 200)
+    {
+        Stop_flag = 0;
+        calibrate_flag = 0;
+    }
+    else
+    {
+        Stop_flag = 0;
+        calibrate_flag = 1;
+    }
+
     while (Stop_flag);
     SetLED4(0);
     DMP_Init();
@@ -99,25 +108,40 @@ void main(void)
     pid_Roll.LowerLimit = -0.5;
     LOG("Start While Loop.....\r\n");
 
-    R_PG_ExtInterrupt_Set_IRQ0(); //Enable DMP interrupt
-    R_PG_ExtInterrupt_Set_IRQ1();
+    R_PG_ExtInterrupt_Set_IRQ0(); //Enable DMP Interrupt
+    R_PG_ExtInterrupt_Set_IRQ1(); //Enable Button Interrupt
     R_PG_ADC_12_StartConversionSW_S12ADA1();
     while (1)
     {
 
-        if(btn_time_flag){
+        if (btn_time_flag)
+        {
             btn_time_flag = 0;
-            switch(btn_count){
-                case 1:
+            switch (btn_count)
+            {
+            case 1:
+                deviation_Pitch = 0;
+                deviation_Roll = 0;
+                break;
+            case 2:
+                if (mode == 0)
+                {
+                    mode = 1;
                     deviation_Pitch = 0;
                     deviation_Roll = 0;
-                    break;
-                case 2:
-                    SetLED3(1);
-                    break;
+                    Stop_flag = 1;
+                }
+                else
+                {
+                    Stop_flag = 0;
+                    mode = 0;
+                }
+                SetLED3(mode);
+                break;
             }
             btn_count = 0;
         }
+
         if (ADC_flag)
         {
             ADC_flag = 0;
@@ -150,29 +174,33 @@ void main(void)
         if (DMPReady_flag)
         {
             DMPReady_flag = 0;
-            if (Read_DMP(&PRY[0], &PRY[1], &PRY[2]) == 0)
+            if (Read_DMP(&RPY[0], &RPY[1], &RPY[2]) == 0)
             {
 
-                if ((PRY[1] < 0) && (PRY[1] >= -180))
+                if ((RPY[1] < 0) && (RPY[1] >= -180))
                 {
-                    PRY[1] += 180;
+                    RPY[1] += 180;
                 }
                 else
                 {
-                    PRY[1] -= 180;
+                    RPY[1] -= 180;
                 }
 
-                pid_Pitch.ActualValue = PRY[1];
-                theta_Pitch += PID_Increase_Pitch(90 + deviation_Pitch);
+                pid_Pitch.ActualValue = RPY[1];
+                theta_Pitch += PID_Increase_Pitch(90 + deviation_Pitch + origin_Pitch);
                 calcPWM_A_Sine(theta_Pitch);
 
-                pid_Roll.ActualValue = PRY[0];
-                theta_Roll += PID_Increase_Roll(deviation_Roll);
+                pid_Roll.ActualValue = RPY[0];
+                theta_Roll += PID_Increase_Roll(deviation_Roll + origin_Roll);
                 calcPWM_B_Sine(theta_Roll);
 
-                if (LOG_flag)
-                    LOG("CP:%f,MP:%f,CR:%f,MR:%f\r\n", PRY[1], theta_Pitch, PRY[0], theta_Roll);
+                if(mode){
+                    origin_Pitch = RPY[1] - 90;
+                    origin_Roll = RPY[0];
+                }
 
+                if (LOG_flag)
+                    LOG("CP:%f,MP:%f,CR:%f,MR:%f\r\n", RPY[1], theta_Pitch, RPY[0], theta_Roll);
                 LOG_flag ^= 1;
             }
         }
@@ -197,15 +225,25 @@ void Irq0IntFunc(void)
 
 void Irq1IntFunc(void)
 {
-    if(btn_count==0){
+    if (btn_count == 0)
+    {
         R_PG_Timer_Start_CMT_U0_C1();
     }
-    btn_count ++;    
+    btn_count++;
+    R_PG_ExtInterrupt_Disable_IRQ1();
+    R_PG_Timer_Start_CMT_U1_C2();
 }
 
-void Cmt1IntFunc(void){
+void Cmt1IntFunc(void)
+{
     R_PG_Timer_HaltCount_CMT_U0_C1();
     btn_time_flag = 1;
+}
+
+void Cmt2IntFunc(void)
+{
+    R_PG_Timer_HaltCount_CMT_U1_C2();
+    R_PG_ExtInterrupt_Set_IRQ1();
 }
 
 void S12ad0IntFunc(void)

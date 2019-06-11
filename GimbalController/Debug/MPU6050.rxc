@@ -4,6 +4,5 @@
 -output=obj="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\MPU6050.obj"
 -debug
 -optimize=1
--speed
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\MPU6050.c"
 -nologo

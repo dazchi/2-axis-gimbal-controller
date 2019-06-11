@@ -9,7 +9,7 @@
 * Version      : 
 * Description  : 
 ******************************************************************************
-* History : 11.06.2019 Version Description
+* History : 12.06.2019 Version Description
 *         :   
 ******************************************************************************/
 
@@ -27,6 +27,7 @@ Includes   <System Includes> , "Project Includes"
 #include ".\GPT\R_PG_Timer_GPT_U0_C2.h"
 #include ".\GPT\R_PG_Timer_GPT_U0.h"
 #include ".\CMT\R_PG_Timer_CMT_U0.h"
+#include ".\CMT\R_PG_Timer_CMT_U1.h"
 #include ".\SCI\R_PG_SCI_C2.h"
 #include ".\RIIC\R_PG_I2C_C0.h"
 #include ".\AD_12\R_PG_ADC_12_S12ADA0.h"

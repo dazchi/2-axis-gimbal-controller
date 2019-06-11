@@ -4,6 +4,5 @@
 -output=obj="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\R_PG_ExtInterrupt_IRQ1.obj"
 -debug
 -optimize=1
--speed
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\ICU\R_PG_ExtInterrupt_IRQ1.c"
 -nologo

@@ -8,6 +8,7 @@ static unsigned char TxBuffer[4096];
 
 void InitialI2C(void)
 {
+    R_PG_SCI_StopModule_C2();
     R_PG_I2C_Set_C0();
 }
 
