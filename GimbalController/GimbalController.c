@@ -40,6 +40,7 @@ int JoyStick_X = 0;
 int JoyStick_Y = 0;
 volatile unsigned int ADC_Result = 0;
 int mode = 0;
+int error_count = 0;
 
 void main(void);
 #ifdef __cplusplus
@@ -85,25 +86,24 @@ void main(void)
         calibrate_flag = 1;
     }
 
-    while (Stop_flag);
+    while (Stop_flag)
+        ;
     SetLED4(0);
     DMP_Init();
     SetLED2(1); //Initialized
-
-    InitialPWMs();
-    EnablePWM_A();
-    EnablePWM_B();
+    delay_ms(2000);
+    SetLED2(0); //Initialized
 
     PID_Initial(&pid_Pitch);
     PID_Initial(&pid_Roll);
-    pid_Pitch.Kp = 0.007; //0.02 0.025 1,0.008 0.03 1.1, 0.007 0.04 1.1
-    pid_Pitch.Ki = 0.04;
-    pid_Pitch.Kd = 1.1;
+    pid_Pitch.Kp = 0.01; //0.02 0.025 1,0.008 0.03 1.1, 0.007 0.04 1.1
+    pid_Pitch.Ki = 0.09;
+    pid_Pitch.Kd = 1.4;
     pid_Pitch.UpperLimit = 0.5;
     pid_Pitch.LowerLimit = -0.5;
-    pid_Roll.Kp = 0.25; //0.6 0.05 5.0,0.5 0.08 5.2, 0.6 0.06 5.3, 0.55 0.09 5.5
-    pid_Roll.Ki = 0.07;
-    pid_Roll.Kd = 5;
+    pid_Roll.Kp = 0.4; //0.6 0.05 5.0,0.5 0.08 5.2, 0.6 0.06 5.3, 0.55 0.09 5.5, 0.25 0.07 5
+    pid_Roll.Ki = 0.12;
+    pid_Roll.Kd = 5.5;
     pid_Roll.UpperLimit = 0.5;
     pid_Roll.LowerLimit = -0.5;
     LOG("Start While Loop.....\r\n");
@@ -111,6 +111,10 @@ void main(void)
     R_PG_ExtInterrupt_Set_IRQ0(); //Enable DMP Interrupt
     R_PG_ExtInterrupt_Set_IRQ1(); //Enable Button Interrupt
     R_PG_ADC_12_StartConversionSW_S12ADA1();
+
+    InitialPWMs();
+    EnablePWM_A();
+    EnablePWM_B();
     while (1)
     {
 
@@ -192,9 +196,11 @@ void main(void)
 
                 pid_Roll.ActualValue = RPY[0];
                 theta_Roll += PID_Increase_Roll(deviation_Roll + origin_Roll);
+                //theta_Roll = PID_Update(&pid_Roll,deviation_Roll + origin_Roll);
                 calcPWM_B_Sine(theta_Roll);
 
-                if(mode){
+                if (mode)
+                {
                     origin_Pitch = RPY[1] - 90;
                     origin_Roll = RPY[0];
                 }
@@ -203,6 +209,15 @@ void main(void)
                     LOG("CP:%f,MP:%f,CR:%f,MR:%f\r\n", RPY[1], theta_Pitch, RPY[0], theta_Roll);
                 LOG_flag ^= 1;
             }
+            else
+            {
+                error_count++;
+            }
+        }
+
+        if (error_count > 100)
+        {
+            Stop_flag = 1;
         }
 
         if (Stop_flag)

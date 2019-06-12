@@ -4,5 +4,6 @@
 -output=obj="C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Debug\UART.obj"
 -debug
 -optimize=1
+-speed
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\UART.c"
 -nologo
