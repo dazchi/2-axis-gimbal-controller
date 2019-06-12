@@ -62,7 +62,7 @@ void main(void);
 		
 //#ifdef __cplusplus				// Use Hardware Setup
 //extern "C" {
-.//#endif
+//#endif
 //extern void HardwareSetup(void);
 //#ifdef __cplusplus
 //}
@@ -81,7 +81,7 @@ void main(void);
 
 #pragma entry PowerON_Reset_PC
 
-++
+
 void PowerON_Reset_PC(void)
 { 
 	set_intb((unsigned long)__sectop("C$VECT"));

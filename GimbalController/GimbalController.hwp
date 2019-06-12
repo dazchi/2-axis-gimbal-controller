@@ -181,49 +181,49 @@
 [GENERAL_DATA_SESSION_SessionRX600_E1_E20_SYSTEM]
 [GENERAL_DATA_SESSION_SessionRX600_Segger_J-Link]
 [OPTIONS_Debug_Renesas OptLinker]
-"Single Shot" "0d7c1bcf5d025d10" 6 
+"Single Shot" "09d68f88a6125d10" 6 
 [OPTIONS_Debug_Renesas RX Assembler]
 "Assembly source file" "0e2546f8be615d10" 5 
 "Linkage symbol file" "0e2546f8be615d10" 5 
 [OPTIONS_Debug_Renesas RX C/C++ Compiler]
-"C source file" "0a1e027feb025d10" 4 
-"C++ source file" "0a1e027feb025d10" 3 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\AD_12\R_PG_ADC_12.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\AD_12\R_PG_ADC_12_S12ADA0.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\AD_12\R_PG_ADC_12_S12ADA1.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\CMT\R_PG_Timer_CMT_U0.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\CMT\R_PG_Timer_CMT_U1.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Delay.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0_C0.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0_C1.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0_C2.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GimbalController.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\I2C.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\ICU\R_PG_ExtInterrupt_IRQ0.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\ICU\R_PG_ExtInterrupt_IRQ1.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\IO\R_PG_IO_PORT_P3.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\IO\R_PG_IO_PORT_P9.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\LED.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\MPU6050.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\PID.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\PWM.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\RIIC\R_PG_I2C_C0.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\SCI\R_PG_SCI_C2.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\SYSTEM\R_PG_Clock.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\UART.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\dbsct.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_ADC_12.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_CMT.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_IIC.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_INTC.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_SCI.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\intprg.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\inv_mpu.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\inv_mpu_dmp_motion_driver.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\resetprg.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\sbrk.c" "0a1e027feb025d10" 2 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\vecttbl.c" "0a1e027feb025d10" 2 
+"C source file" "05b399edd1125d10" 4 
+"C++ source file" "05b399edd1125d10" 3 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\AD_12\R_PG_ADC_12.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\AD_12\R_PG_ADC_12_S12ADA0.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\AD_12\R_PG_ADC_12_S12ADA1.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\CMT\R_PG_Timer_CMT_U0.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\CMT\R_PG_Timer_CMT_U1.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\Delay.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0_C0.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0_C1.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GPT\R_PG_Timer_GPT_U0_C2.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GimbalController.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\I2C.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\ICU\R_PG_ExtInterrupt_IRQ0.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\ICU\R_PG_ExtInterrupt_IRQ1.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\IO\R_PG_IO_PORT_P3.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\IO\R_PG_IO_PORT_P9.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\LED.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\MPU6050.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\PID.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\PWM.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\RIIC\R_PG_I2C_C0.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\SCI\R_PG_SCI_C2.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\SYSTEM\R_PG_Clock.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\UART.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\dbsct.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_ADC_12.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_CMT.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_IIC.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_INTC.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_SCI.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\intprg.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\inv_mpu.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\inv_mpu_dmp_motion_driver.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\resetprg.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\sbrk.c" "05b399edd1125d10" 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\vecttbl.c" "05b399edd1125d10" 2 
 [OPTIONS_Debug_Renesas RX C/C++ Library Generator]
 "Single Shot" "0e2546f8be615d10" 1 
 [OPTIONS_Debug_Renesas RX Configurator]
@@ -233,11 +233,11 @@
 "[S|OUTPUTPATH|^"$(CONFIGDIR)\$(PROJECTNAME).lib^"] [V|VERSION|1] [S|CPU|RX600] [S|ENDIAN|LITTLE] [S|ROUND|NEAREST] [S|DBL_SIZE|4] [B|SIGNED_CHAR|0] [B|SIGNED_BITFIELD|0] [S|BIT_ORDER|RIGHT] [S|FINT_REGISTER|0] [S|BRANCH|24] [S|LANG|C] [B|RUNTIME|1] [B|CTYPE|0] [B|MATH|1] [B|MATHF|1] [B|STDARG|1] [B|STDIO|1] [B|STDLIB|1] [B|STRING|1] [B|IOS|0] [B|NEW|1] [B|COMPLEX|0] [B|CPPSTRING|0] [S|MODE|BUILD/CHANGED]" 1 
 "[V|VERSION|1] [B|COMMAND|1] [S|SPEC|UITRON4] [S|OUTPUTPATH|^"$(CONFIGDIR)^"] [S|CPU|RX600] [S|ENDIAN|LITTLE] [S|FINT_REGISTER|0]" 7 
 "[V|VERSION|1] [B|DEBUG|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|LISTFILE|0] [S|CPU|RX600] [S|ENDIAN|LITTLE] [S|FINT_REGISTER|0]" 5 
-"[V|VERSION|1] [S|LANG|CPP] [B|SJIS|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [S|OPTIMIZE|1] [B|SIZE|1] [B|MAP|0] [I|INLINE|100] [I|LOOP|2] [S|MISRA2004_CHECK_RULE|ALL] [S|MISRA2004_RULE|1.1|3.4|4.1|5.2|5.3|5.4|5.5|5.6|5.7|6.1|6.2|6.3|6.4|6.5|7.1|8.1|8.2|8.3|8.5|8.6|8.7|8.8|8.11|8.12|9.2|9.3|10.1|10.2|10.3|10.4|10.5|10.6|11.1|11.2|11.3|11.4|11.5|12.1|12.2|12.3|12.4|12.5|12.6|12.7|12.8|12.9|12.10|12.11|12.12|12.13|13.1|13.2|13.3|13.4|13.7|14.1|14.2|14.3|14.4|14.5|14.6|14.7|14.8|14.9|14.10|15.1|15.2|15.3|15.4|15.5|16.1|16.2|16.3|16.4|16.5|16.6|16.8|16.9|17.3|17.4|17.5|17.6|18.1|18.2|18.4|19.1|20.2|20.4|20.5|20.7|20.8|20.9|20.10|20.11|20.12] [S|MISRA1998_CHECK_RULE|ALL] [S|MISRA1998_RULE|1|5|8|12|13|14|17|18|19|20|21|22|24|28|29|31|32|33|34|35|36|37|38|39|40|42|43|44|45|46|48|49|50|51|53|54|55|56|57|58|59|60|61|62|63|64|65|68|69|70|71|72|73|74|75|76|77|78|79|80|82|83|84|85|99|101|102|103|104|105|106|108|110|111|112|113|115|118|119|121|122|123|124|125|126|127] [S|MISRA_GROUP_FILE_PATH|^"$(PROJDIR)\$(PROJECTNAME).rde^"] [S|CPU|RX600] [S|BASE|00000000=NONE]
+"[V|VERSION|1] [S|LANG|CPP] [B|SJIS|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [S|OPTIMIZE|1] [B|SPEED|1] [B|MAP|0] [I|INLINE|100] [I|LOOP|2] [S|MISRA2004_CHECK_RULE|ALL] [S|MISRA2004_RULE|1.1|3.4|4.1|5.2|5.3|5.4|5.5|5.6|5.7|6.1|6.2|6.3|6.4|6.5|7.1|8.1|8.2|8.3|8.5|8.6|8.7|8.8|8.11|8.12|9.2|9.3|10.1|10.2|10.3|10.4|10.5|10.6|11.1|11.2|11.3|11.4|11.5|12.1|12.2|12.3|12.4|12.5|12.6|12.7|12.8|12.9|12.10|12.11|12.12|12.13|13.1|13.2|13.3|13.4|13.7|14.1|14.2|14.3|14.4|14.5|14.6|14.7|14.8|14.9|14.10|15.1|15.2|15.3|15.4|15.5|16.1|16.2|16.3|16.4|16.5|16.6|16.8|16.9|17.3|17.4|17.5|17.6|18.1|18.2|18.4|19.1|20.2|20.4|20.5|20.7|20.8|20.9|20.10|20.11|20.12] [S|MISRA1998_CHECK_RULE|ALL] [S|MISRA1998_RULE|1|5|8|12|13|14|17|18|19|20|21|22|24|28|29|31|32|33|34|35|36|37|38|39|40|42|43|44|45|46|48|49|50|51|53|54|55|56|57|58|59|60|61|62|63|64|65|68|69|70|71|72|73|74|75|76|77|78|79|80|82|83|84|85|99|101|102|103|104|105|106|108|110|111|112|113|115|118|119|121|122|123|124|125|126|127] [S|MISRA_GROUP_FILE_PATH|^"$(PROJDIR)\$(PROJECTNAME).rde^"] [S|CPU|RX600] [S|BASE|00000000=NONE]
 " 3 
-"[V|VERSION|1] [S|LANG|C] [B|SJIS|1] [S|INCLUDE|^"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController^"|^"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src^"] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [S|OPTIMIZE|1] [B|SIZE|1] [B|MAP|0] [I|INLINE|100] [I|LOOP|2] [S|MISRA2004_CHECK_RULE|ALL] [S|MISRA2004_RULE|1.1|3.4|4.1|5.2|5.3|5.4|5.5|5.6|5.7|6.1|6.2|6.3|6.4|6.5|7.1|8.1|8.2|8.3|8.5|8.6|8.7|8.8|8.11|8.12|9.2|9.3|10.1|10.2|10.3|10.4|10.5|10.6|11.1|11.2|11.3|11.4|11.5|12.1|12.2|12.3|12.4|12.5|12.6|12.7|12.8|12.9|12.10|12.11|12.12|12.13|13.1|13.2|13.3|13.4|13.7|14.1|14.2|14.3|14.4|14.5|14.6|14.7|14.8|14.9|14.10|15.1|15.2|15.3|15.4|15.5|16.1|16.2|16.3|16.4|16.5|16.6|16.8|16.9|17.3|17.4|17.5|17.6|18.1|18.2|18.4|19.1|20.2|20.4|20.5|20.7|20.8|20.9|20.10|20.11|20.12] [S|MISRA1998_CHECK_RULE|ALL] [S|MISRA1998_RULE|1|5|8|12|13|14|17|18|19|20|21|22|24|28|29|31|32|33|34|35|36|37|38|39|40|42|43|44|45|46|48|49|50|51|53|54|55|56|57|58|59|60|61|62|63|64|65|68|69|70|71|72|73|74|75|76|77|78|79|80|82|83|84|85|99|101|102|103|104|105|106|108|110|111|112|113|115|118|119|121|122|123|124|125|126|127] [S|MISRA_GROUP_FILE_PATH|^"$(PROJDIR)\$(PROJECTNAME).rde^"] [S|CPU|RX600] [S|BASE|00000000=NONE]
+"[V|VERSION|1] [S|LANG|C] [B|SJIS|1] [S|INCLUDE|^"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController^"|^"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src^"] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [S|OPTIMIZE|1] [B|SPEED|1] [B|MAP|0] [I|INLINE|100] [I|LOOP|2] [S|MISRA2004_CHECK_RULE|ALL] [S|MISRA2004_RULE|1.1|3.4|4.1|5.2|5.3|5.4|5.5|5.6|5.7|6.1|6.2|6.3|6.4|6.5|7.1|8.1|8.2|8.3|8.5|8.6|8.7|8.8|8.11|8.12|9.2|9.3|10.1|10.2|10.3|10.4|10.5|10.6|11.1|11.2|11.3|11.4|11.5|12.1|12.2|12.3|12.4|12.5|12.6|12.7|12.8|12.9|12.10|12.11|12.12|12.13|13.1|13.2|13.3|13.4|13.7|14.1|14.2|14.3|14.4|14.5|14.6|14.7|14.8|14.9|14.10|15.1|15.2|15.3|15.4|15.5|16.1|16.2|16.3|16.4|16.5|16.6|16.8|16.9|17.3|17.4|17.5|17.6|18.1|18.2|18.4|19.1|20.2|20.4|20.5|20.7|20.8|20.9|20.10|20.11|20.12] [S|MISRA1998_CHECK_RULE|ALL] [S|MISRA1998_RULE|1|5|8|12|13|14|17|18|19|20|21|22|24|28|29|31|32|33|34|35|36|37|38|39|40|42|43|44|45|46|48|49|50|51|53|54|55|56|57|58|59|60|61|62|63|64|65|68|69|70|71|72|73|74|75|76|77|78|79|80|82|83|84|85|99|101|102|103|104|105|106|108|110|111|112|113|115|118|119|121|122|123|124|125|126|127] [S|MISRA_GROUP_FILE_PATH|^"$(PROJDIR)\$(PROJECTNAME).rde^"] [S|CPU|RX600] [S|BASE|00000000=NONE]
 " 2 
-"[V|VERSION|1] [S|LANG|C] [B|SJIS|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [S|OPTIMIZE|1] [B|SIZE|1] [B|MAP|0] [I|INLINE|100] [I|LOOP|2] [S|MISRA2004_CHECK_RULE|ALL] [S|MISRA2004_RULE|1.1|3.4|4.1|5.2|5.3|5.4|5.5|5.6|5.7|6.1|6.2|6.3|6.4|6.5|7.1|8.1|8.2|8.3|8.5|8.6|8.7|8.8|8.11|8.12|9.2|9.3|10.1|10.2|10.3|10.4|10.5|10.6|11.1|11.2|11.3|11.4|11.5|12.1|12.2|12.3|12.4|12.5|12.6|12.7|12.8|12.9|12.10|12.11|12.12|12.13|13.1|13.2|13.3|13.4|13.7|14.1|14.2|14.3|14.4|14.5|14.6|14.7|14.8|14.9|14.10|15.1|15.2|15.3|15.4|15.5|16.1|16.2|16.3|16.4|16.5|16.6|16.8|16.9|17.3|17.4|17.5|17.6|18.1|18.2|18.4|19.1|20.2|20.4|20.5|20.7|20.8|20.9|20.10|20.11|20.12] [S|MISRA1998_CHECK_RULE|ALL] [S|MISRA1998_RULE|1|5|8|12|13|14|17|18|19|20|21|22|24|28|29|31|32|33|34|35|36|37|38|39|40|42|43|44|45|46|48|49|50|51|53|54|55|56|57|58|59|60|61|62|63|64|65|68|69|70|71|72|73|74|75|76|77|78|79|80|82|83|84|85|99|101|102|103|104|105|106|108|110|111|112|113|115|118|119|121|122|123|124|125|126|127] [S|MISRA_GROUP_FILE_PATH|^"$(PROJDIR)\$(PROJECTNAME).rde^"] [S|CPU|RX600] [S|BASE|00000000=NONE]
+"[V|VERSION|1] [S|LANG|C] [B|SJIS|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\$(FILELEAF).obj^"] [B|DEBUG|1] [S|OPTIMIZE|1] [B|SPEED|1] [B|MAP|0] [I|INLINE|100] [I|LOOP|2] [S|MISRA2004_CHECK_RULE|ALL] [S|MISRA2004_RULE|1.1|3.4|4.1|5.2|5.3|5.4|5.5|5.6|5.7|6.1|6.2|6.3|6.4|6.5|7.1|8.1|8.2|8.3|8.5|8.6|8.7|8.8|8.11|8.12|9.2|9.3|10.1|10.2|10.3|10.4|10.5|10.6|11.1|11.2|11.3|11.4|11.5|12.1|12.2|12.3|12.4|12.5|12.6|12.7|12.8|12.9|12.10|12.11|12.12|12.13|13.1|13.2|13.3|13.4|13.7|14.1|14.2|14.3|14.4|14.5|14.6|14.7|14.8|14.9|14.10|15.1|15.2|15.3|15.4|15.5|16.1|16.2|16.3|16.4|16.5|16.6|16.8|16.9|17.3|17.4|17.5|17.6|18.1|18.2|18.4|19.1|20.2|20.4|20.5|20.7|20.8|20.9|20.10|20.11|20.12] [S|MISRA1998_CHECK_RULE|ALL] [S|MISRA1998_RULE|1|5|8|12|13|14|17|18|19|20|21|22|24|28|29|31|32|33|34|35|36|37|38|39|40|42|43|44|45|46|48|49|50|51|53|54|55|56|57|58|59|60|61|62|63|64|65|68|69|70|71|72|73|74|75|76|77|78|79|80|82|83|84|85|99|101|102|103|104|105|106|108|110|111|112|113|115|118|119|121|122|123|124|125|126|127] [S|MISRA_GROUP_FILE_PATH|^"$(PROJDIR)\$(PROJECTNAME).rde^"] [S|CPU|RX600] [S|BASE|00000000=NONE]
 " 4 
 "[V|VERSION|6] [S|INPUTLIBRARY|^"C:\Renesas\PDG2\lib\RX62T\RX62T_library_LQFP_64.lib^"] [S|FORM|STYPE] [S|BYTE_COUNT_VALUE|FF] [B|DEBUG|1] [S|ROM|(D,R)|(D_1,R_1)|(D_2,R_2)] [S|CRC|NONE|DEFAULT|00000000] [B|LIST|1] [S|LIST|^"$(CONFIGDIR)\$(PROJECTNAME).map^"] [S|SHOW|METHODCUSTOM|] [S|OUTPUT|^"$(CONFIGDIR)\$(PROJECTNAME).mot^"] [I|SPACE|^"FF^"] [B|OPTIMIZE|0] [S|START|B_1,R_1,B_2,R_2,B,R,SU,SI(01000)|PResetPRG(0FFFC0100)|C_1,C_2,C,C$*,D*,P,PIntPRG,W*(0FFFC0200)|FIXEDVECT(0FFFFFFD0)]" 6 
 [EXCLUDED_FILES_Debug]
@@ -275,6 +275,8 @@
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\intprg.c" 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\intprg.c" 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\intprg.c" 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\intprg.c" 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\vecttbl.c" 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\vecttbl.c" 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\vecttbl.c" 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\vecttbl.c" 

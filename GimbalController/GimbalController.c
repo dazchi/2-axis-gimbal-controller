@@ -65,7 +65,7 @@ void main(void)
 
     SetLED1(1); //Power-On
 
-    SetLED4(1);
+    
     R_PG_ADC_12_StartConversionSW_S12ADA0();
     while (!ADC_flag)
         ;
@@ -85,10 +85,10 @@ void main(void)
         Stop_flag = 0;
         calibrate_flag = 1;
     }
-
+    SetLED4(Stop_flag);
     while (Stop_flag)
         ;
-    SetLED4(0);
+    SetLED4(Stop_flag);
     DMP_Init();
     SetLED2(1); //Initialized
     delay_ms(2000);
@@ -223,13 +223,15 @@ void main(void)
         if (Stop_flag)
         {
             DisablePWM_A();
-            DisablePWM_B();
+            DisablePWM_B();            
         }
         else
         {
             EnablePWM_A();
             EnablePWM_B();
         }
+
+        SetLED4(Stop_flag);
     }
 }
 

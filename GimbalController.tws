@@ -29,8 +29,8 @@
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\AD_12\R_PG_ADC_12_S12ADA0.c" 26 26 1416 272 0 13 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\AD_12\R_PG_ADC_12_S12ADA1.c" 0 0 1494 180 0 15 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\CMT\R_PG_Timer_CMT_U0.c" 0 0 1468 173 0 16 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GimbalController.c" 0 0 1556 372 0 0 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\I2C.c" 0 0 1562 441 0 3 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\GimbalController.c" -8 -31 1178 203 1 0 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\I2C.c" 0 0 1556 441 0 3 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\I2C.h" 0 0 1390 376 0 4 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\IO\R_PG_IO_PORT_P9.c" 52 52 1468 211 0 10 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\MPU6050.c" 0 0 1520 123 0 6 
@@ -41,7 +41,7 @@
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\i_src\Interrupt_INTC.c" 26 26 1468 211 0 9 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\inv_mpu.c" 26 26 1390 330 0 8 
 "C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\inv_mpu.h" 0 0 1390 330 0 7 
-"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\resetprg.c" -8 -31 1562 290 1 2 
+"C:\Users\crazy\Documents\Lab\62T\gimbal\HEW_Workspace\GimbalController\GimbalController\resetprg.c" 0 0 1556 290 0 2 
 [LOADED_PROJECTS]
 "GimbalController" 
 [END]
